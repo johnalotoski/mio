@@ -533,7 +533,7 @@ impl TcpListener {
         sock.bind(addr)?;
 
         // listen
-        let listener = sock.listen(1024)?;
+        let listener = sock.listen(32768)?;
         Ok(TcpListener {
             sys: sys::TcpListener::new(listener)?,
             selector_id: SelectorId::new(),
